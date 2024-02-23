@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
       .then((data) => {
         console.log(data);
+        window.location.href = "inscription-reussie.html";
       })
       .catch((error) => {
         console.error("Erreur:", error);
@@ -53,9 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = document.getElementById("pass").value;
     console.log(email, password);
 
-    sendData("http://localhost:8081/auth", { email:email, password:password })
+    sendData("http://localhost:8081/auth", { email: email, password: password })
       .then((data) => {
         console.log(data);
+        window.location.href = "connexion-reussie.html";
       })
       .catch((error) => {
         console.error("Erreur:", error);
