@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = document.getElementById("password").value;
     console.log(name, email, password);
 
-    sendData("http://example.com/register", {
+    sendData("http://localhost:8081/signUp", {
       name: name,
       email: email,
       password: password,
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = document.getElementById("pass").value;
     console.log(email, password);
 
-    sendData("http://example.com/login", { email, password })
+    sendData("http://localhost:8081/auth", { email:email, password:password })
       .then((data) => {
         console.log(data);
       })
