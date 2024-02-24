@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginBtn = document.getElementById("login");
   const SignUpbtn = document.getElementById("Signup-btn");
   const SignInbtn = document.getElementById("Signin-btn");
+  const invalid = document.getElementById("err");
 
   function toggleForms() {
     container.classList.toggle("active");
@@ -57,7 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
     sendData("http://localhost:8081/auth", { email: email, password: password })
       .then((data) => {
         console.log(data);
-        window.location.href = "connexion-reussie.html";
+        if (data.result === true) {
+          window.location.href = "connexion-reussie.html";
+        }
+        if (data.result === false) {
+          invalid.style.display = "block";
+        }
       })
       .catch((error) => {
         console.error("Erreur:", error);

@@ -199,3 +199,29 @@ body {
 .container.active .toggle-right {
   transform: translateX(200%);
 }
+
+.invalid {
+  border: 2px solid red;
+  margin: 4px 0;
+  padding: 4px 8px;
+  font-size: 5px;
+  font-size: 10px;
+  border-radius: 50px;
+  width: 100%;
+  display: none;
+}
+.invalid-text {
+  color: red;
+  margin: 1px 1px;
+  font-size: 0.5px;
+  color: red;
+}
+
+.invalid p {
+  margin: 8px;
+}
+/* .invalid-icon {
+  height: 3rem;
+  width: 3rem;
+  color: rgb(233, 12, 12);
+} */
