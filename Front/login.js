@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const SignInbtn = document.getElementById("Signin-btn");
   const invalid = document.getElementById("err");
   const invalid1 = document.getElementById("err1");
+  const invalid2 = document.getElementById("err2");
 
   function toggleForms() {
     container.classList.toggle("active");
@@ -59,6 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
           window.location.href = "inscription-reussie.html";
         })
         .catch((error) => {
+          console.error("L'adresse e-mail n'est pas valide");
+          invalid2.style.display = "block";
           console.error("Erreur:", error);
         });
     }

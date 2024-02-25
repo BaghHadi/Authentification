@@ -240,6 +240,26 @@ body {
 .invalid1 p {
   margin: 8px;
 }
+.invalid2 {
+  border: 2px solid red;
+  margin: 4px 0;
+  padding: 4px 8px;
+  font-size: 5px;
+  font-size: 10px;
+  border-radius: 50px;
+  width: 100%;
+  display: none;
+}
+.invalid2-text {
+  color: red;
+  margin: 1px 1px;
+  font-size: 0.5px;
+  color: red;
+}
+
+.invalid2 p {
+  margin: 8px;
+}
 /* .invalid-icon {
   height: 3rem;
   width: 3rem;
