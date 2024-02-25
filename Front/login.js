@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const SignUpbtn = document.getElementById("Signup-btn");
   const SignInbtn = document.getElementById("Signin-btn");
   const invalid = document.getElementById("err");
+  const invalid1 = document.getElementById("err1");
 
   function toggleForms() {
     container.classList.toggle("active");
@@ -33,20 +34,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    console.log(name, email, password);
 
-    sendData("http://localhost:8081/signUp", {
-      name: name,
-      email: email,
-      password: password,
-    })
-      .then((data) => {
-        console.log(data);
-        window.location.href = "inscription-reussie.html";
+    function validateEmail(email) {
+      const re = /\S+@\S+\.\S+/;
+      return re.test(email);
+    }
+
+    console.log(validateEmail(email));
+
+    if (!validateEmail(email)) {
+      console.error("L'adresse e-mail n'est pas valide");
+      invalid1.style.display = "block";
+      return;
+    } else {
+      console.log(name, email, password);
+
+      sendData("http://localhost:8081/signUp", {
+        name: name,
+        email: email,
+        password: password,
       })
-      .catch((error) => {
-        console.error("Erreur:", error);
-      });
+        .then((data) => {
+          console.log(data);
+          window.location.href = "inscription-reussie.html";
+        })
+        .catch((error) => {
+          console.error("Erreur:", error);
+        });
+    }
   });
 
   SignInbtn.addEventListener("click", (e) => {
